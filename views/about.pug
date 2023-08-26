@@ -1,5 +1,14 @@
 extends layout
 
 block content
+  - var superheroes = ['Spiderman', 'Ironman', 'Hulk', 'Thor', 'Captain America']
   h1= title
   p Welcome to #{title}
+  ol
+    each hero in superheroes
+      li= hero
+  - var count = 0
+  while superheroes[count] != "Hulk"
+    p #{count}
+    - count ++
+  p #{superheroes[count].toUpperCase()} SMASH!
